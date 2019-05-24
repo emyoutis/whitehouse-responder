@@ -1,0 +1,24 @@
+{
+    "name": "emitis89/whitehouse-responder",
+    "description": "A simple API for generating responses in WhiteHouse standards.",
+    "type": "library",
+    "keywords": [
+        "API",
+        "WhiteHouse"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EmiTis Yousefi",
+            "email": "emitis89@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.9"
+    }
+}
