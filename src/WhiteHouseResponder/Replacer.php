@@ -69,4 +69,23 @@ class Replacer
 
         return $obj->getResult();
     }
+
+
+
+    /**
+     * Does the replace process in a simple and rapid way for more than one templates.
+     *
+     * @param array $templates
+     * @param array $replaces
+     *
+     * @return array
+     */
+    public static function replaceArray(array $templates, array $replaces)
+    {
+        foreach ($templates as $key => $template) {
+            $templates[$key] = static::replace($template, $replaces);
+        }
+
+        return $templates;
+    }
 }
