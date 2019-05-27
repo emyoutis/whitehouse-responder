@@ -23,15 +23,15 @@ class ErrorsRepository
     /**
      * Registers a new error with the given information.
      *
-     * @param int|string $errorCode
-     * @param string     $developerMessage
-     * @param string     $userMessage
-     * @param string     $moreInfo
+     * @param string $errorCode
+     * @param string $developerMessage
+     * @param string $userMessage
+     * @param string $moreInfo
      *
      * @throws DuplicatedErrorCodeException
      * @return void
      */
-    public function register($errorCode, $developerMessage, $userMessage, $moreInfo)
+    public function register(string $errorCode, $developerMessage, $userMessage, $moreInfo)
     {
         if ($this->errorHasBeenRegistered($errorCode)) {
             throw new DuplicatedErrorCodeException($errorCode);
@@ -45,11 +45,11 @@ class ErrorsRepository
     /**
      * Checks if the specified error code has been registered.
      *
-     * @param int|string $errorCode
+     * @param string $errorCode
      *
      * @return bool
      */
-    public function errorHasBeenRegistered($errorCode)
+    public function errorHasBeenRegistered(string $errorCode)
     {
         return array_key_exists($errorCode, $this->errors);
     }
@@ -59,11 +59,11 @@ class ErrorsRepository
     /**
      * Checks if the specified error code has not been registered.
      *
-     * @param int|string $errorCode
+     * @param string $errorCode
      *
      * @return bool
      */
-    public function errorHasNotBeenRegistered($errorCode)
+    public function errorHasNotBeenRegistered(string $errorCode)
     {
         return !$this->errorHasBeenRegistered($errorCode);
     }
