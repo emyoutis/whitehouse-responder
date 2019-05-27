@@ -6,7 +6,7 @@
  * Time: 10:12 PM
  */
 
-namespace WhiteHouseResponder\Exceptions;
+namespace EmiTis\WhiteHouseResponder\Exceptions;
 
 use UnexpectedValueException;
 use WhiteHouseResponder\Replacer;

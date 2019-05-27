@@ -6,7 +6,7 @@
  * Time: 11:02 PM
  */
 
-namespace WhiteHouseResponder\Laravel;
+namespace EmiTis\WhiteHouseResponder\Laravel;
 
 
 use Illuminate\Support\ServiceProvider;
