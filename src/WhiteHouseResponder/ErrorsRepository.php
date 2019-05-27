@@ -16,7 +16,7 @@ class ErrorsRepository
     /**
      * @var array All the registered errors with their info.
      */
-    protected static $errors = [];
+    protected $errors = [];
 
 
 
@@ -31,13 +31,13 @@ class ErrorsRepository
      * @throws DuplicatedErrorCodeException
      * @return void
      */
-    public static function register($errorCode, $developerMessage, $userMessage, $moreInfo)
+    public function register($errorCode, $developerMessage, $userMessage, $moreInfo)
     {
-        if (static::errorHasBeenRegistered($errorCode)) {
+        if ($this->errorHasBeenRegistered($errorCode)) {
             throw new DuplicatedErrorCodeException($errorCode);
         }
 
-        static::$errors[$errorCode] = compact('developerMessage', 'userMessage', 'moreInfo');
+        $this->errors[$errorCode] = compact('developerMessage', 'userMessage', 'moreInfo');
     }
 
 
@@ -49,9 +49,9 @@ class ErrorsRepository
      *
      * @return bool
      */
-    public static function errorHasBeenRegistered($errorCode)
+    public function errorHasBeenRegistered($errorCode)
     {
-        return array_key_exists($errorCode, static::$errors);
+        return array_key_exists($errorCode, $this->errors);
     }
 
 
@@ -63,8 +63,8 @@ class ErrorsRepository
      *
      * @return bool
      */
-    public static function errorHasNotBeenRegistered($errorCode)
+    public function errorHasNotBeenRegistered($errorCode)
     {
-        return !static::errorHasBeenRegistered($errorCode);
+        return !$this->errorHasBeenRegistered($errorCode);
     }
 }
