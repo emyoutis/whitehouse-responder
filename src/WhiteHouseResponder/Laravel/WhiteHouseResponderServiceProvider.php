@@ -13,7 +13,7 @@ use Illuminate\Support\ServiceProvider;
 use EmiTis\WhiteHouseResponder\ErrorsRepository;
 use EmiTis\WhiteHouseResponder\Response;
 
-class EmiTis\WhiteHouseResponderServiceProvider extends ServiceProvider
+class WhiteHouseResponderServiceProvider extends ServiceProvider
 {
     /**
      * @inheritdoc
