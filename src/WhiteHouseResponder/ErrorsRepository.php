@@ -32,7 +32,7 @@ class ErrorsRepository
      * @throws DuplicatedErrorCodeException
      * @return void
      */
-    public function register(string $errorCode, $developerMessage, $userMessage, $moreInfo)
+    public function register(string $errorCode, string $developerMessage, string $userMessage, string $moreInfo)
     {
         if ($this->errorHasBeenRegistered($errorCode)) {
             throw new DuplicatedErrorCodeException($errorCode);
