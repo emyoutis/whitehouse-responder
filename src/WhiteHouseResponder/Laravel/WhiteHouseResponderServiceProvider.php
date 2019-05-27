@@ -10,10 +10,10 @@ namespace EmiTis\WhiteHouseResponder\Laravel;
 
 
 use Illuminate\Support\ServiceProvider;
-use WhiteHouseResponder\ErrorsRepository;
-use WhiteHouseResponder\Response;
+use EmiTis\WhiteHouseResponder\ErrorsRepository;
+use EmiTis\WhiteHouseResponder\Response;
 
-class WhiteHouseResponderServiceProvider extends ServiceProvider
+class EmiTis\WhiteHouseResponderServiceProvider extends ServiceProvider
 {
     /**
      * @inheritdoc

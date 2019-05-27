@@ -6,7 +6,7 @@
  * Time: 10:05 PM
  */
 
-namespace WhiteHouseResponder;
+namespace EmiTis\WhiteHouseResponder;
 
 
 class Response

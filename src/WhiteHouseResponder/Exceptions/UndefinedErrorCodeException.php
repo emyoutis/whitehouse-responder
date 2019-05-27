@@ -9,7 +9,7 @@
 namespace EmiTis\WhiteHouseResponder\Exceptions;
 
 use UnexpectedValueException;
-use WhiteHouseResponder\Replacer;
+use EmiTis\WhiteHouseResponder\Replacer;
 
 class UndefinedErrorCodeException extends UnexpectedValueException
 {

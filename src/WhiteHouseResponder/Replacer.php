@@ -6,7 +6,7 @@
  * Time: 12:37 AM
  */
 
-namespace WhiteHouseResponder;
+namespace EmiTis\WhiteHouseResponder;
 
 
 class Replacer

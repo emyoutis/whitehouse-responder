@@ -6,11 +6,11 @@
  * Time: 4:59 PM
  */
 
-namespace WhiteHouseResponder;
+namespace EmiTis\WhiteHouseResponder;
 
 
-use WhiteHouseResponder\Exceptions\DuplicatedErrorCodeException;
-use WhiteHouseResponder\Exceptions\UndefinedErrorCodeException;
+use EmiTis\WhiteHouseResponder\Exceptions\DuplicatedErrorCodeException;
+use EmiTis\WhiteHouseResponder\Exceptions\UndefinedErrorCodeException;
 
 class ErrorsRepository
 {
