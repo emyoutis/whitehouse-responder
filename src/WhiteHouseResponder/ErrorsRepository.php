@@ -10,11 +10,12 @@ namespace WhiteHouseResponder;
 
 
 use WhiteHouseResponder\Exceptions\DuplicatedErrorCodeException;
+use WhiteHouseResponder\Exceptions\UndefinedErrorCodeException;
 
 class ErrorsRepository
 {
     /**
-     * @var array All the registered errors with their info.
+     * @var array|array[] All the registered errors with their info.
      */
     protected $errors = [];
 
@@ -38,6 +39,24 @@ class ErrorsRepository
         }
 
         $this->errors[$errorCode] = compact('developerMessage', 'userMessage', 'moreInfo');
+    }
+
+
+
+    /**
+     * Returns the information of a error with the given error code.
+     *
+     * @param string $errorCode
+     *
+     * @return array
+     */
+    public function getErrorInfo(string $errorCode)
+    {
+        if ($this->errorHasNotBeenRegistered($errorCode)) {
+            throw new UndefinedErrorCodeException($errorCode);
+        }
+
+        return $this->errors[$errorCode];
     }
 
 

@@ -2,17 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: emitis
- * Date: 5/24/19
- * Time: 6:26 PM
+ * Date: 5/27/19
+ * Time: 10:12 PM
  */
 
 namespace WhiteHouseResponder\Exceptions;
 
-
 use UnexpectedValueException;
 use WhiteHouseResponder\Replacer;
 
-class DuplicatedErrorCodeException extends UnexpectedValueException
+class UndefinedErrorCodeException extends UnexpectedValueException
 {
     /**
      * @var string
@@ -22,11 +21,11 @@ class DuplicatedErrorCodeException extends UnexpectedValueException
 
 
     /**
-     * DuplicatedErrorCodeException constructor.
+     * UndefinedErrorCodeException constructor.
      *
-     * @param $errorCode
+     * @param string $errorCode
      */
-    public function __construct($errorCode)
+    public function __construct(string $errorCode)
     {
         $this->errorCode = $errorCode;
 
@@ -68,6 +67,6 @@ class DuplicatedErrorCodeException extends UnexpectedValueException
      */
     private function getMessageTemplate()
     {
-        return 'The error :errorCode is already registered.';
+        return 'Undefined error code :errorCode.';
     }
 }
