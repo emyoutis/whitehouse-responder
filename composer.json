@@ -20,5 +20,16 @@
     },
     "require": {
         "php": ">=7.2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
+            ],
+            "aliases": {
+                "WhiteHouseResponderResponse": "WhiteHouseResponder\\Laravel\\Facades\\Response",
+                "WhiteHouseResponderErrors": "WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
+            }
+        }
     }
 }
