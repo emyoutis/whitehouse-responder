@@ -24,11 +24,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
+                "EmiTis\\WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
             ],
             "aliases": {
-                "WhiteHouseResponderResponse": "WhiteHouseResponder\\Laravel\\Facades\\Response",
-                "WhiteHouseResponderErrors": "WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
+                "WhiteHouseResponderResponse": "EmiTis\\WhiteHouseResponder\\Laravel\\Facades\\Response",
+                "WhiteHouseResponderErrors": "EmiTis\\WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
             }
         }
     }
