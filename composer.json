@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "EmiTis": "src/"
+            "EmiTis\\": "src/"
         }
     },
     "require": {
