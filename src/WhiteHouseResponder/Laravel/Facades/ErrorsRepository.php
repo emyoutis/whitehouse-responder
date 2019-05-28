@@ -6,7 +6,7 @@
  * Time: 11:49 PM
  */
 
-namespace EmiTis\WhiteHouseResponder\Laravel\Facades;
+namespace Emyoutis\WhiteHouseResponder\Laravel\Facades;
 
 
 use Illuminate\Support\Facades\Facade;

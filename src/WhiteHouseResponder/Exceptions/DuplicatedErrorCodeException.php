@@ -6,11 +6,11 @@
  * Time: 6:26 PM
  */
 
-namespace EmiTis\WhiteHouseResponder\Exceptions;
+namespace Emyoutis\WhiteHouseResponder\Exceptions;
 
 
 use UnexpectedValueException;
-use EmiTis\WhiteHouseResponder\Replacer;
+use Emyoutis\WhiteHouseResponder\Replacer;
 
 class DuplicatedErrorCodeException extends UnexpectedValueException
 {

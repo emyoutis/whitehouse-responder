@@ -6,12 +6,12 @@
  * Time: 11:02 PM
  */
 
-namespace EmiTis\WhiteHouseResponder\Laravel;
+namespace Emyoutis\WhiteHouseResponder\Laravel;
 
 
 use Illuminate\Support\ServiceProvider;
-use EmiTis\WhiteHouseResponder\ErrorsRepository;
-use EmiTis\WhiteHouseResponder\Response;
+use Emyoutis\WhiteHouseResponder\ErrorsRepository;
+use Emyoutis\WhiteHouseResponder\Response;
 
 class WhiteHouseResponderServiceProvider extends ServiceProvider
 {

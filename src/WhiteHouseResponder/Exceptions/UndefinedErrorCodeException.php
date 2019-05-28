@@ -6,10 +6,10 @@
  * Time: 10:12 PM
  */
 
-namespace EmiTis\WhiteHouseResponder\Exceptions;
+namespace Emyoutis\WhiteHouseResponder\Exceptions;
 
 use UnexpectedValueException;
-use EmiTis\WhiteHouseResponder\Replacer;
+use Emyoutis\WhiteHouseResponder\Replacer;
 
 class UndefinedErrorCodeException extends UnexpectedValueException
 {

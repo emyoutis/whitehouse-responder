@@ -9,13 +9,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "EmiTis Yousefi",
+            "name": "Emyoutis Yousefi",
             "email": "emitis89@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "EmiTis\\": "src/"
+            "Emyoutis\\": "src/"
         }
     },
     "require": {
@@ -24,11 +24,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "EmiTis\\WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
+                "Emyoutis\\WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
             ],
             "aliases": {
-                "WhiteHouseResponderResponse": "EmiTis\\WhiteHouseResponder\\Laravel\\Facades\\Response",
-                "WhiteHouseResponderErrors": "EmiTis\\WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
+                "WhiteHouseResponderResponse": "Emyoutis\\WhiteHouseResponder\\Laravel\\Facades\\Response",
+                "WhiteHouseResponderErrors": "Emyoutis\\WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
             }
         }
     }
