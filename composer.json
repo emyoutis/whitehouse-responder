@@ -1,5 +1,5 @@
 {
-    "name": "emitis89/whitehouse-responder",
+    "name": "emyoutis/whitehouse-responder",
     "description": "A simple API for generating responses in WhiteHouse standards.",
     "type": "library",
     "keywords": [
