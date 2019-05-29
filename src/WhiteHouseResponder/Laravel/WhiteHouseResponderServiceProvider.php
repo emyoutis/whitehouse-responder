@@ -30,7 +30,7 @@ class WhiteHouseResponderServiceProvider extends ServiceProvider
      */
     protected function registerSingletons()
     {
-        $this->registerResponse();
+        $this->registerResponseSingleton();
         $this->registerErrorsSingleton();
     }
 
@@ -39,7 +39,7 @@ class WhiteHouseResponderServiceProvider extends ServiceProvider
     /**
      * Registers the singleton for the response.
      */
-    protected function registerResponse()
+    protected function registerResponseSingleton()
     {
         $this->app->singleton('whitehouse.response', function () {
             return app()->make(Response::class);
