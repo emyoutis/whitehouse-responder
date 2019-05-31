@@ -44,6 +44,19 @@ class ErrorsRepository
 
 
     /**
+     * Unregisters an error with the specified error code.
+     *
+     *
+     * @param string $errorCode
+     */
+    public function unregister(string $errorCode)
+    {
+        unset($this->errors[$errorCode]);
+    }
+
+
+
+    /**
      * Returns the information of a error with the given error code.
      *
      * @param string $errorCode

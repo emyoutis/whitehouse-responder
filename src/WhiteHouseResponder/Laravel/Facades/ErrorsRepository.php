@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static void register(string $errorCode, string $developerMessage, string $userMessage, string $moreInfo)
+ * @method static void unregister(string $errorCode)
  * @method static void getErrorInfo(string $errorCode)
  * @method static void errorHasBeenRegistered(string $errorCode)
  * @method static void errorHasNotBeenRegistered(string $errorCode)
