@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Facade;
  * @method static void getErrorInfo(string $errorCode)
  * @method static void errorHasBeenRegistered(string $errorCode)
  * @method static void errorHasNotBeenRegistered(string $errorCode)
+ * @method static void disableExceptions()
+ * @method static void enableExceptions()
+ * @method static void setExceptions(bool $value)
  */
 class ErrorsRepository extends Facade
 {

@@ -19,6 +19,11 @@ class ErrorsRepository
      */
     protected $errors = [];
 
+    /**
+     * @var bool Whether the exceptions should be thrown.
+     */
+    protected $exceptions = true;
+
 
 
     /**
@@ -35,7 +40,11 @@ class ErrorsRepository
     public function register(string $errorCode, string $developerMessage, string $userMessage, string $moreInfo)
     {
         if ($this->errorHasBeenRegistered($errorCode)) {
-            throw new DuplicatedErrorCodeException($errorCode);
+            if ($this->exceptions) {
+                throw new DuplicatedErrorCodeException($errorCode);
+            } else {
+                return;
+            }
         }
 
         $this->errors[$errorCode] = compact('developerMessage', 'userMessage', 'moreInfo');
@@ -45,7 +54,6 @@ class ErrorsRepository
 
     /**
      * Unregisters an error with the specified error code.
-     *
      *
      * @param string $errorCode
      */
@@ -61,12 +69,17 @@ class ErrorsRepository
      *
      * @param string $errorCode
      *
-     * @return array
+     * @throws UndefinedErrorCodeException
+     * @return array|null
      */
     public function getErrorInfo(string $errorCode)
     {
         if ($this->errorHasNotBeenRegistered($errorCode)) {
-            throw new UndefinedErrorCodeException($errorCode);
+            if ($this->exceptions) {
+                throw new UndefinedErrorCodeException($errorCode);
+            } else {
+                return null;
+            }
         }
 
         return $this->errors[$errorCode];
@@ -98,5 +111,43 @@ class ErrorsRepository
     public function errorHasNotBeenRegistered(string $errorCode)
     {
         return !$this->errorHasBeenRegistered($errorCode);
+    }
+
+
+
+    /**
+     * Sets the value of the $exceptions property to `false`.
+     *
+     * @return void
+     */
+    public function disableExceptions()
+    {
+        $this->setExceptions(false);
+    }
+
+
+
+    /**
+     * Sets the value of the $exceptions property to `true`.
+     *
+     * @return void
+     */
+    public function enableExceptions()
+    {
+        $this->setExceptions(true);
+    }
+
+
+
+    /**
+     * Sets the value of the $exceptions property to the given value.
+     *
+     * @param bool $value
+     *
+     * @return void
+     */
+    public function setExceptions(bool $value)
+    {
+        $this->exceptions = $value;
     }
 }
