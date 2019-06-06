@@ -43,6 +43,18 @@ class Response
 
 
     /**
+     * Sets the value of the $formatter property.
+     *
+     * @param Closure $formatter
+     */
+    public function registerFormatter(Closure $formatter)
+    {
+        $this->formatter = $formatter;
+    }
+
+
+
+    /**
      * Returns a success response based on the specified details.
      *
      * @param array $results
