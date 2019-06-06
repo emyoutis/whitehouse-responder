@@ -20,16 +20,5 @@
     },
     "require": {
         "php": ">=7.2.0"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Emyoutis\\WhiteHouseResponder\\Laravel\\WhiteHouseResponderServiceProvider"
-            ],
-            "aliases": {
-                "WhiteHouseResponderResponse": "Emyoutis\\WhiteHouseResponder\\Laravel\\Facades\\Response",
-                "WhiteHouseResponderErrors": "Emyoutis\\WhiteHouseResponder\\Laravel\\Facades\\ErrorsRepository"
-            }
-        }
     }
 }
