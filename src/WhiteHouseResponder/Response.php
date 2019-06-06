@@ -8,6 +8,7 @@
 
 namespace Emyoutis\WhiteHouseResponder;
 
+use Closure;
 
 class Response
 {
@@ -21,6 +22,11 @@ class Response
      * @var ErrorsRepository
      */
     protected $errorsRepository;
+
+    /**
+     * @var Closure
+     */
+    protected $formatter;
 
 
 
@@ -46,7 +52,7 @@ class Response
      */
     public function success(array $results, array $metadata = [])
     {
-        return compact('metadata', 'results');
+        return $this->formatKeys(compact('metadata', 'results'));
     }
 
 
@@ -94,11 +100,13 @@ class Response
     {
         $errorInfo = $this->prepareErrorInfo($errorCode, $replaces);
 
-        return array_merge(
+        $body = array_merge(
              array_flip(static::ERROR_KEYS), // this item is being merged to order the items in a proper way
              compact('status', 'errorCode'),
              $errorInfo
         );
+
+        return $this->formatKeys($body);
     }
 
 
@@ -130,5 +138,29 @@ class Response
     protected function getErrorInfo(string $errorCode)
     {
         return $this->errorsRepository->getErrorInfo($errorCode);
+    }
+
+
+
+    /**
+     * Formats the given response array with the closure stored in the $formatter property and returns the formatted
+     * version.
+     *
+     * @param array $response
+     *
+     * @return array
+     */
+    protected function formatKeys(array $response)
+    {
+        if (!$this->formatter) {
+            return $response;
+        }
+
+        $keys   = array_keys($response);
+        $values = array_values($response);
+
+        $formattedKeys = array_map($this->formatter, $keys);
+
+        return array_combine($formattedKeys, $values);
     }
 }
