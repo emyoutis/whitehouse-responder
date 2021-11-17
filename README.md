@@ -44,7 +44,7 @@ Given that in the White House Standards failure responses should return `400` or
     ```php
     $response->clientError('40001');
     ```
-- `clientError()`: This method is ready to generate the response body for the server errors.
+- `serverError()`: This method is ready to generate the response body for the server errors.
     ```php
     $response->serverError('40001');
     ```
